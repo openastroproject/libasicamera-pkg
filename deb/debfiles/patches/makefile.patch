@@ -1,0 +1,32 @@
+--- Makefile	1970-01-01 01:00:00.000000000 +0100
++++ Makefile	2016-11-10 17:31:08.686722661 +0000
+@@ -0,0 +1,29 @@
++all:	libasicamera.pc libasicamera2.pc
++
++%.pc:	%.pc.in
++	sed -e "s!@LIBDIR@!$(LIBDIR)!g" \
++		-e "s!@VERSION@!$(VERSION)!g" < $< > $@
++
++install:
++	mkdir -p $(LIBDIR) $(INCDIR) $(PKGCONFDIR) $(UDEVDIR)
++	case $(DEB_BUILD_ARCH) in \
++	i386) \
++		cp $(SRCDIR)/lib/x86/libASICamera.a $(LIBDIR); \
++		cp $(SRCDIR)/lib/x86/libASICamera2.a $(LIBDIR); \
++		cp $(SRCDIR)/lib/x86/libASICamera*.so.$(VERSION) $(LIBDIR);; \
++	amd64) \
++		cp $(SRCDIR)/lib/x64/libASICamera.a $(LIBDIR); \
++		cp $(SRCDIR)/lib/x64/libASICamera2.a $(LIBDIR); \
++		cp $(SRCDIR)/lib/x64/libASICamera*.so.$(VERSION) $(LIBDIR);; \
++	armhf) \
++		arch=`uname -m | sed -e 's/[lb]$$//'`; \
++		cp $(SRCDIR)/lib/$$arch/libASICamera.a $(LIBDIR); \
++		cp $(SRCDIR)/lib/$$arch/libASICamera2.a $(LIBDIR); \
++		cp $(SRCDIR)/lib/$$arch/libASICamera*.so.$(VERSION) $(LIBDIR);; \
++	esac
++	ln -sf libASICamera.so.$(VERSION) $(LIBDIR)/libASICamera.so.$(MAJOR_REV)
++	ln -sf libASICamera2.so.$(VERSION) $(LIBDIR)/libASICamera2.so.$(MAJOR_REV)
++	cp $(SRCDIR)/include/*.h $(INCDIR)
++	cp $(SRCDIR)/libasicamera.pc $(PKGCONFDIR)
++	cp $(SRCDIR)/libasicamera2.pc $(PKGCONFDIR)
++	cp $(SRCDIR)/70-asi-cameras.rules $(UDEVDIR)

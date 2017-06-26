@@ -1,0 +1,10 @@
+Document: libasicamera
+Title: libASICamera SDK Manual
+Author: ZWO
+Abstract: How to use the libASICamera SDK
+Section: Science/Astronomy
+
+Format: PDF
+Files: /usr/share/doc/libasicamera/*.pdf*
+
+
