@@ -1,0 +1,7 @@
+# source archives
+libasicamera-*.tar.gz
+libasicamera*orig.tar.gz
+*.deb
+*.debian.tar.xz
+*.dsc
+*.changes
