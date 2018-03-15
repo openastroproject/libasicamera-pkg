@@ -1,4 +1,3 @@
 demo/main_SDK2_snap.cpp
+demo/main_SDK2_video.cpp
 demo/Makefile
-demo/UtilTimer.c
-demo/UtilTimer.h
