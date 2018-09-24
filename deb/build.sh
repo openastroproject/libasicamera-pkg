@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export DEBEMAIL=james@openastro.org
+export DEBEMAIL=james@openastroproject.org
 export DEBFULLNAME="James Fidell"
 
 version=`cat version`
