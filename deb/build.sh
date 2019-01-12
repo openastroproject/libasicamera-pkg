@@ -15,7 +15,13 @@ cd $srcdir
 tar zxf ../libasicamera-$version.tar.gz
 chmod -x demo/*.*
 chmod -x demo/Makefile
-dh_make -y -l -f ../libasicamera-$version.tar.gz
+YFLAG=-y
+dh_make -v | fgrep -q '1998-2011'
+if [ $? -eq 0 ]
+then
+  YFLAG=''
+fi
+dh_make $YFLAG -l -f ../libasicamera-$version.tar.gz
 
 cp ../debfiles/control $debdir
 cp ../debfiles/copyright $debdir
