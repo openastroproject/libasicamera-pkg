@@ -29,7 +29,6 @@ cp ../debfiles/changelog $debdir
 cp ../debfiles/docs $debdir
 cp ../debfiles/watch $debdir
 cp ../debfiles/libasicamera.dirs $debdir
-cp ../debfiles/libasicamera.links $debdir
 cp ../debfiles/libasicamera.install $debdir
 cp ../debfiles/libasicamera.symbols $debdir
 cp ../debfiles/libasicamera.doc-base $debdir

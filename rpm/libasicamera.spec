@@ -2,7 +2,7 @@
 
 Name:           libasicamera
 Version:        1.13.0930
-Release:        0
+Release:        1
 Summary:        ZWO ASI camera SDK
 License:        expat
 URL:            http://astronomy-imaging-camera.com/
@@ -59,7 +59,7 @@ case %{_arch} in
     ;;
 esac
 
-ln -sf %{name}.so.%{version} %{buildroot}%{_libdir}/%{name}.so.0
+ln -sf %{name}.so.%{version} %{buildroot}%{_libdir}/%{name}.so.1
 cp include/*.h %{buildroot}%{_includedir}
 cp *.pc %{buildroot}%{_libdir}/pkgconfig
 cp doc/* %{buildroot}%{_docdir}/%{name}-%{version}

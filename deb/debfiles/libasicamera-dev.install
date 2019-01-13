@@ -1,3 +1,4 @@
 usr/include/*
 usr/lib/*/pkgconfig/*
 usr/lib/*/libASICamera2.a
+usr/lib/*/libASICamera2.so
