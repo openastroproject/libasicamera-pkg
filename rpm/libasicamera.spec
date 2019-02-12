@@ -2,7 +2,7 @@
 
 Name:           libasicamera
 Version:        1.13.0930
-Release:        1
+Release:        2
 Summary:        ZWO ASI camera SDK
 License:        expat
 URL:            http://astronomy-imaging-camera.com/
@@ -91,6 +91,6 @@ cp 70-asi-cameras.rules %{buildroot}/etc/udev/rules.d
 %{_docdir}/%{name}-%{version}/demo/*.*
 
 %changelog
-* Sat Nov 3 2018 James Fidell <james@openastroproject.org> - 1.13.0930-0
+* Sat Nov 3 2018 James Fidell <james@openastroproject.org> - 1.13.0930-2
 - Initial RPM release
 
