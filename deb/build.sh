@@ -32,19 +32,18 @@ cp ../debfiles/libasicamera.dirs $debdir
 cp ../debfiles/libasicamera.install $debdir
 cp ../debfiles/libasicamera.symbols $debdir
 cp ../debfiles/libasicamera.doc-base $debdir
+cp ../debfiles/libasicamera.triggers $debdir
 cp ../debfiles/libasicamera-dev.dirs $debdir
 cp ../debfiles/libasicamera-dev.install $debdir
 cp ../debfiles/libasicamera-dev.examples $debdir
 
-echo 9 >> $debdir/compat
+echo 10 > $debdir/compat
 
 sed -e '/^.*[ |]configure./a\
-        ldconfig\
-	udevadm control --reload-rules' < $debdir/postinst.ex > $debdir/postinst
+	udevadm control --reload-rules || true' < $debdir/postinst.ex > $debdir/postinst
 chmod +x $debdir/postinst
 sed -e '/^.*[ |]remove./a\
-        ldconfig\
-	udevadm control --reload-rules' < $debdir/postrm.ex > $debdir/postrm
+	udevadm control --reload-rules || true' < $debdir/postrm.ex > $debdir/postrm
 chmod +x $debdir/postrm
 echo "3.0 (quilt)" > $debsrc/format
 
@@ -79,4 +78,4 @@ dpkg-buildpackage -us -uc
 
 echo "Now run:"
 echo
-echo "    lintian -i -I --show-overrides libasicamera_$version-1_amd64.changes"
+echo "    lintian -i -I --show-overrides libasicamera_$version-3_amd64.changes"
