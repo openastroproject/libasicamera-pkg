@@ -1,3 +1,4 @@
+Create libasicamera2.pc template
 --- libasicamera2.pc.in	1970-01-01 01:00:00.000000000 +0100
 +++ libasicamera2.pc.in	2016-11-05 23:11:43.247858211 +0000
 @@ -0,0 +1,9 @@
