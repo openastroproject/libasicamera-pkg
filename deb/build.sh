@@ -76,6 +76,8 @@ done
 
 dpkg-buildpackage -us -uc
 
+cd ..
+pkg=`echo libasicamera_$version-*.changes`
 echo "Now run:"
 echo
-echo "    lintian -i -I --show-overrides libasicamera_$version-3_amd64.changes"
+echo "    lintian -i -I --show-overrides $pkg"
