@@ -10,6 +10,20 @@ debdir=debian
 debsrc=$debdir/source
 quiltconf=$HOME/.quiltrc-dpkg
 
+debversion=`cat /etc/debian_version`
+case $debversion in
+  jessie/sid)
+    compatversion=9
+    ;;
+  stretch/sid)
+    compatversion=9
+    ;;
+  *)
+    compatversion=10
+    ;;
+esac
+echo $compatversion > debfiles/compat
+
 mkdir $srcdir
 cd $srcdir
 tar zxf ../libasicamera-$version.tar.gz
@@ -23,9 +37,10 @@ then
 fi
 dh_make $YFLAG -l -f ../libasicamera-$version.tar.gz
 
-cp ../debfiles/control $debdir
+sed -e "s/@@COMPAT@@/$compatversion/" < ../debfiles/control > $debdir/control
 cp ../debfiles/copyright $debdir
 cp ../debfiles/changelog $debdir
+cp ../debfiles/compat $debdir
 cp ../debfiles/docs $debdir
 cp ../debfiles/watch $debdir
 cp ../debfiles/libasicamera.dirs $debdir
@@ -36,8 +51,6 @@ cp ../debfiles/libasicamera.triggers $debdir
 cp ../debfiles/libasicamera-dev.dirs $debdir
 cp ../debfiles/libasicamera-dev.install $debdir
 cp ../debfiles/libasicamera-dev.examples $debdir
-
-echo 10 > $debdir/compat
 
 sed -e '/^.*[ |]configure./a\
 	udevadm control --reload-rules || true' < $debdir/postinst.ex > $debdir/postinst
