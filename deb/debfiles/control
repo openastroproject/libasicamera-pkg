@@ -11,7 +11,7 @@ Homepage: http://astronomy-imaging-camera.com/
 Package: libasicamera
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
-Depends: ${shlibs:Depends}, ${misc:Depends}, fxload
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: ZWO ASI camera interface library
  Userspace library for connecting to ZWO ASI astronomy cameras
 
