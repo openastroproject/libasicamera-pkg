@@ -1,5 +1,5 @@
-libasicamera (1.14.0227-0) bionic; urgency=medium
+libasicamera (1.14.0425-0) bionic; urgency=medium
 
   * Initial release
 
- -- James Fidell <james@openastroproject.org>  Tue, 12 Mar 2019 20:13:00 +0000
+ -- James Fidell <james@openastroproject.org>  Fri, 3 May 2019 20:13:00 +0100

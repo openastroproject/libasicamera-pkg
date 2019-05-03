@@ -24,9 +24,8 @@ case $debversion in
 esac
 echo $compatversion > debfiles/compat
 
-mkdir $srcdir
-cd $srcdir
 tar zxf ../libasicamera-$version.tar.gz
+cd $srcdir
 chmod -x demo/*.*
 chmod -x demo/Makefile
 YFLAG=-y
@@ -35,7 +34,7 @@ if [ $? -eq 0 ]
 then
   YFLAG=''
 fi
-dh_make $YFLAG -l -f ../libasicamera-$version.tar.gz
+dh_make $YFLAG -l -f ../../libasicamera-$version.tar.gz
 
 sed -e "s/@@COMPAT@@/$compatversion/" < ../debfiles/control > $debdir/control
 cp ../debfiles/copyright $debdir
