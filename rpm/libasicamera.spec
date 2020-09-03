@@ -1,14 +1,14 @@
 %define debug_package %{nil}
 
 Name:           libasicamera
-Version:        1.15.0430
+Version:        1.15.0617
 Release:        0
 Summary:        ZWO ASI camera SDK
 License:        expat
 URL:            http://astronomy-imaging-camera.com/
 Prefix:         %{_prefix}
 Provides:       libasicamera = %{version}-%{release}
-Obsoletes:      libasicamera < 1.15.0430
+Obsoletes:      libasicamera < 1.15.0617
 Requires:       libusbx
 Source:         libasicamera-%{version}.tar.gz
 Patch0:         pkg-config.patch
@@ -22,7 +22,7 @@ Summary:        Development files for %{name}
 Group:          Development/Libraries
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Provides:       libasicamera-devel = %{version}-%{release}
-Obsoletes:      libasicamera-devel < 1.15.0430
+Obsoletes:      libasicamera-devel < 1.15.0617
 
 %description    devel
 The %{name}-devel package contains libraries and header files for
@@ -91,6 +91,6 @@ cp 70-asi-cameras.rules %{buildroot}/etc/udev/rules.d
 %{_docdir}/%{name}-%{version}/demo/*.*
 
 %changelog
-* Thu May 28 2020 James Fidell <james@openastroproject.org> - 1.15.0430-0
+* Fri Sep 4 2020 James Fidell <james@openastroproject.org> - 1.15.0617-0
 - Initial RPM release
 
