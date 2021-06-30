@@ -1,5 +1,5 @@
-libasicamera (1.18-0) focal; urgency=medium
+libasicamera (1.19.1-0) focal; urgency=medium
 
   * Initial release
 
- -- James Fidell <james@openastroproject.org>  Thu, 20 May 2021 20:40:00 +0100
+ -- James Fidell <james@openastroproject.org>  Wed, 30 Jun 2021 00:43:00 +0100
