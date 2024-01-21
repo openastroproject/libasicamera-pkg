@@ -1,5 +1,5 @@
-libasicamera (1.32-0) focal; urgency=medium
+libasicamera (1.33-0) jammy; urgency=medium
 
   * Initial release
 
- -- James Fidell <james@openastroproject.org>  Wed, 20 Dec 2023 20:08:00 +0000
+ -- James Fidell <james@openastroproject.org>  Wed, 27 Dec 2023 18:46:00 +0000
